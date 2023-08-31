@@ -23,20 +23,19 @@ internal class Program
             switch (mathOperator)
             {
                 case "+":
-                    resultOf = OperatorPlus(numberOne, numberTwo);
-                    Console.WriteLine($"O resultado da soma é {resultOf}");
+                    OperatorPlus(numberOne, numberTwo);
                     break;
                 case "-":
-                    resultOf = OperatorSubtraction(numberOne, numberTwo);
-                    Console.WriteLine($"O resultado da subtração é {resultOf}");
+                    OperatorSubtraction(numberOne, numberTwo);
                     break;
                 case "*":
-                    resultOf = OperatorMultiply(numberOne, numberTwo);
-                    Console.WriteLine($"O resultado da multiplicação é {resultOf}");
+                    OperatorMultiply(numberOne, numberTwo);
                     break;
                 case "/":
-                    resultOf = OperatorDivide(numberOne, numberTwo);
-                    Console.WriteLine($"O resultado da divisão é {resultOf}");
+                    OperatorDivide(numberOne, numberTwo);
+                    break;
+                default:
+                    Console.WriteLine("Nenhuma opção selecionada.");
                     break;
             }
             Console.WriteLine("Deseja continuar? s para sim e n para não");
@@ -44,24 +43,24 @@ internal class Program
         }
     }
 
-    static float OperatorPlus(float numberOne, float numberTwo)
+    static void OperatorPlus(float numberOne, float numberTwo)
     {
         float result = numberOne + numberTwo;
-        return result;
+        Console.WriteLine($"O resultado da soma é {result}");
     }
-    static float OperatorSubtraction(float numberOne, float numberTwo)
+    static void OperatorSubtraction(float numberOne, float numberTwo)
     {
         float result = numberOne - numberTwo;
-        return result;
+        Console.WriteLine($"O resultado da subtração é {result}");
     }
-    static float OperatorMultiply(float numberOne, float numberTwo)
+    static void OperatorMultiply(float numberOne, float numberTwo)
     {
         float result = numberOne * numberTwo;
-        return result;
+        Console.WriteLine($"O resultado da multiplicação é {result}");
     }
-    static float OperatorDivide(float numberOne, float numberTwo)
+    static void OperatorDivide(float numberOne, float numberTwo)
     {
         float result = numberOne / numberTwo;
-        return result;
+        Console.WriteLine($"O resultado da divisão é {result}");
     }
 }
