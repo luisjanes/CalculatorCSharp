@@ -6,75 +6,62 @@ internal class Program
     {
         string mathContinue = "s";
         while (mathContinue != "n")
-        { 
+        {
 
             Console.WriteLine("Informe o primeiro número: ");
-            int numberOne = int.Parse(Console.ReadLine());
+            float numberOne = float.Parse(Console.ReadLine());
             Console.WriteLine("Informe o segundo número: ");
-            int numberTwo = int.Parse(Console.ReadLine());
+            float numberTwo = float.Parse(Console.ReadLine());
             Console.WriteLine("Informe a operação matemática desejada: ");
             Console.WriteLine("/ para divisão");
             Console.WriteLine("* para multiplicação");
             Console.WriteLine("- para subtração");
             Console.WriteLine("+ para soma");
             string mathOperator = Console.ReadLine();
+            float resultOf;
 
             switch (mathOperator)
             {
                 case "+":
-                    Calculator calculatorPlus = new Calculator();
-                    Console.WriteLine(calculatorPlus.OperatorPlus(numberOne, numberTwo));
+                    resultOf = OperatorPlus(numberOne, numberTwo);
+                    Console.WriteLine($"O resultado da soma é {resultOf}");
                     break;
                 case "-":
-                    Calculator calculatorSub = new Calculator();
-                    Console.WriteLine(calculatorSub.OperatorSubtraction(numberOne, numberTwo));
+                    resultOf = OperatorSubtraction(numberOne, numberTwo);
+                    Console.WriteLine($"O resultado da subtração é {resultOf}");
                     break;
                 case "*":
-                    Calculator calculatorMultiply = new Calculator();
-                    Console.WriteLine(calculatorMultiply.OperatorMultiply(numberOne, numberTwo));
+                    resultOf = OperatorMultiply(numberOne, numberTwo);
+                    Console.WriteLine($"O resultado da multiplicação é {resultOf}");
                     break;
                 case "/":
-                    Calculator calculatorDivide = new Calculator();
-                    Console.WriteLine(calculatorDivide.OperatorDivide(numberOne, numberTwo));
+                    resultOf = OperatorDivide(numberOne, numberTwo);
+                    Console.WriteLine($"O resultado da divisão é {resultOf}");
                     break;
             }
             Console.WriteLine("Deseja continuar? s para sim e n para não");
             mathContinue = Console.ReadLine();
         }
-        
-
     }
-    struct Calculator
+
+    static float OperatorPlus(float numberOne, float numberTwo)
     {
-        public Calculator(int numberOne, int numberTwo)
-        {
-            NumberTwo = numberTwo;
-            NumberOne = numberOne;
-        }
-
-        public int NumberOne;
-        public int NumberTwo;
-
-        public int OperatorPlus(int numberOne, int numberTwo)
-        {
-            int result = numberOne + numberTwo;
-            return result;
-        }        
-        public int OperatorSubtraction(int numberOne, int numberTwo)
-        {
-            int result = numberOne - numberTwo;
-            return result;
-        }
-        public int OperatorMultiply(int numberOne, int numberTwo)
-        {
-            int result = numberOne * numberTwo;
-            return result;
-        }
-        public int OperatorDivide(int numberOne, int numberTwo)
-        {
-            int result = numberOne / numberTwo;
-            return result;
-        }
+        float result = numberOne + numberTwo;
+        return result;
     }
-
+    static float OperatorSubtraction(float numberOne, float numberTwo)
+    {
+        float result = numberOne - numberTwo;
+        return result;
+    }
+    static float OperatorMultiply(float numberOne, float numberTwo)
+    {
+        float result = numberOne * numberTwo;
+        return result;
+    }
+    static float OperatorDivide(float numberOne, float numberTwo)
+    {
+        float result = numberOne / numberTwo;
+        return result;
+    }
 }
