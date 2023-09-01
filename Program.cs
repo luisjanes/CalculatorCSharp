@@ -191,10 +191,10 @@ internal class Program
         Console.Clear();
         Console.WriteLine("Informe o primeiro número: ");
         float numberOne = float.Parse(Console.ReadLine());
-        Console.WriteLine("Informe o segundo número: ");
+        Console.WriteLine("Informe a porcentagem: ");
         float numberTwo = float.Parse(Console.ReadLine());
         float result = (numberOne * numberTwo)/100;
-        Console.WriteLine($"O resultado da divisão é {result}");
+        Console.WriteLine($"{numberTwo} % de {numberOne} é {result}");
         Console.ReadKey();
         Menu();
     }
